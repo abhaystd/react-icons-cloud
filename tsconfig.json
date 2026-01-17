@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "CommonJS",
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "baseUrl": ".",
+        "paths": {
+            "@react-icons-cloud/*": [
+                "packages/*/src/index.ts"
+            ],
+            "@react-icons-cloud/core": [
+                "packages/core/src/IconBase.tsx"
+            ]
+        }
+    }
+}

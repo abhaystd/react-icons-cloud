@@ -1,0 +1,6 @@
+src/icons/AwsLambda.tsx(2,8): error TS1259: Module '"C:/C++course/ZZPorjects/open react icons/react-icons-cloud/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+src/icons/AwsLambda.tsx(7,4): error TS7006: Parameter 'props' implicitly has an 'any' type.
+src/icons/AwsLambda.tsx(7,11): error TS7006: Parameter 'ref' implicitly has an 'any' type.
+src/icons/SampleIcon.tsx(2,8): error TS1259: Module '"C:/C++course/ZZPorjects/open react icons/react-icons-cloud/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+src/icons/SampleIcon.tsx(7,4): error TS7006: Parameter 'props' implicitly has an 'any' type.
+src/icons/SampleIcon.tsx(7,11): error TS7006: Parameter 'ref' implicitly has an 'any' type.
