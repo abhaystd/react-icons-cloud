@@ -1,7 +1,13 @@
 {
   "name": "@react-icons-cloud/aws",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
   "dependencies": {
     "@react-icons-cloud/core": "*"
   },
