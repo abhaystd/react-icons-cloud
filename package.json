@@ -16,6 +16,7 @@
   "license": "MIT",
   "description": "",
   "devDependencies": {
+    "@changesets/cli": "^2.31.0",
     "@types/fs-extra": "^11.0.4",
     "@types/glob": "^8.1.0",
     "@types/prettier": "^2.7.3",

@@ -10,12 +10,12 @@ const PACKAGES_DIR = path.resolve(__dirname, '../packages');
 const SVG_SOURCES_DIR = path.resolve(__dirname, '../svg-sources');
 
 // Template for the icon component
-const componentTemplate = (iconName: string, svgContent: string) => `
+const componentTemplate = (iconName: string, svgContent: string, viewBox: string) => `
 import { IconBase, IconBaseProps, IconType } from "@react-icons-cloud/core";
 import React from "react";
 
-export const ${iconName}: IconType = React.forwardRef<SVGSVGElement, IconBaseProps>((props, ref) => (
-  <IconBase ref={ref} {...props}>
+export const ${iconName}: IconType = React.forwardRef<SVGSVGElement, IconBaseProps>(({ color, ...props }, ref) => (
+  <IconBase ref={ref} viewBox="${viewBox}" color={color} {...props}>
     ${svgContent}
   </IconBase>
 ));
@@ -36,13 +36,14 @@ async function generateIconsForPackage(packageName: string) {
   // Ensure output directory exists
   await fs.ensureDir(outputDir);
 
-  const svgFiles = await glob('*.svg', { cwd: sourceDir });
+  const svgFiles = await glob('**/*.svg', { cwd: sourceDir });
   const exports: string[] = [];
 
   console.log(`Generating icons for ${packageName}...`);
 
   for (const file of svgFiles) {
     const filePath = path.join(sourceDir, file);
+    const isColorIcon = file.includes('color' + path.sep) || file.includes('color/');
     const svgContentOriginal = await fs.readFile(filePath, 'utf8');
 
     // Optimize SVG
@@ -51,12 +52,14 @@ async function generateIconsForPackage(packageName: string) {
         'preset-default',
         'removeDimensions',
         'removeXMLNS',
-        {
-          name: 'removeAttrs',
-          params: {
-            attrs: '(fill|stroke)',
+        ...(isColorIcon ? [] : [
+          {
+            name: 'removeAttrs' as const,
+            params: {
+              attrs: '(fill|stroke)',
+            },
           },
-        },
+        ]),
       ],
     });
 
@@ -80,7 +83,15 @@ async function generateIconsForPackage(packageName: string) {
       }
     });
 
-    const innerContent = $('svg').html();
+    let innerContent = $('svg').html() || '';
+    if (isColorIcon) {
+      // Allow overriding hardcoded colors with the 'color' prop while keeping brand colors as defaults
+      // We check for 'currentColor' because that's often the default prop value in the UI, and we want brand colors by default.
+      innerContent = innerContent.replace(/(fill|stroke)="(#([0-9a-fA-F]{3}){1,2})"/g, (match, attr, hex) => {
+        return `${attr}={color && color !== "currentColor" ? color : "${hex}"}`;
+      });
+    }
+    const viewBox = $('svg').attr('viewBox') || '0 0 24 24';
 
     if (!innerContent) {
       console.warn(`Could not extract content from ${file}`);
@@ -88,7 +99,7 @@ async function generateIconsForPackage(packageName: string) {
     }
 
     const iconName = toPascalCase(path.basename(file, '.svg'));
-    const componentCode = componentTemplate(iconName, innerContent);
+    const componentCode = componentTemplate(iconName, innerContent, viewBox);
     const formattedCode = await prettier.format(componentCode, { parser: 'typescript' });
 
     await fs.writeFile(path.join(outputDir, `${iconName}.tsx`), formattedCode);
@@ -104,7 +115,8 @@ async function generateIconsForPackage(packageName: string) {
 
 function toPascalCase(str: string): string {
   return str
-    .replace(/[-_](\w)/g, (_, c) => c.toUpperCase())
+    .replace(/[^a-zA-Z0-9]+(\w)/g, (_, c) => c.toUpperCase())
+    .replace(/[^a-zA-Z0-9]/g, '')
     .replace(/^\w/, c => c.toUpperCase());
 }
 
