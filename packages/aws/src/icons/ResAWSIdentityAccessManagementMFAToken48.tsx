@@ -1,0 +1,18 @@
+import { IconBase, IconBaseProps, IconType } from "@react-icons-cloud/core";
+import React from "react";
+
+export const ResAWSIdentityAccessManagementMFAToken48: IconType =
+  React.forwardRef<SVGSVGElement, IconBaseProps>(({ color, ...props }, ref) => (
+    <IconBase ref={ref} viewBox="0 0 48 48" color={color} {...props}>
+      <title>
+        Icon-Resource/Security-Identity-and-Compliance/Res_AWS-Identity-Access-Management_MFA-Token_48
+      </title>
+      <path
+        fill={color && color !== "currentColor" ? color : "#dd344c"}
+        d="m32.626 24.794 1.752-5.121 1.768 5.121zm2.855-6.881H33.37l-4.057 11.088h1.953l.895-2.783h4.433l.928 2.783h1.953zm-10.616 4.769h3.92v1.567h-3.92v4.752h-1.952V17.913h6.736v1.568h-4.784zm-6.657-4.769h2.113v11.088h-1.792v-8.305l-2.88 5.522h-1.76l-2.784-5.489v8.272H9.313V17.913h2.176l3.327 6.608zM24 44.002C12.973 44.002 4 35.029 4 24.001S12.973 4 24 4c11.03 0 20.003 8.973 20.003 20.001S35.03 44.002 24 44.002M24 2C11.869 2 2 11.869 2 24.001s9.869 22.001 22 22.001c12.133 0 22.003-9.869 22.003-22.001S36.133 2 24 2"
+        fillRule="evenodd"
+      />
+    </IconBase>
+  ));
+ResAWSIdentityAccessManagementMFAToken48.displayName =
+  "ResAWSIdentityAccessManagementMFAToken48";
