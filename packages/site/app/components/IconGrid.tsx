@@ -35,6 +35,7 @@ export const IconGrid = ({ initialPackage = "aws" }: { initialPackage?: string }
             <div className="flex-1 flex flex-col min-w-0">
                 {/* Sticky Search Header */}
                 <div className="sticky top-0 z-10 p-4 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-gray-200 dark:border-zinc-800">
+                    <h1 className="sr-only">Browse and search for Cloud Provider Icons</h1>
                     <div className="max-w-4xl mx-auto flex items-center gap-4">
                         <input
                             type="text"
