@@ -1,6 +1,7 @@
 {
   "name": "@react-icons-cloud/core",
   "version": "0.1.0",
+  "description": "Core utility and base components for the react-icons-cloud icon library. Provides the underlying SVG wrapper and TypeScript types.",
   "publishConfig": {
     "access": "public"
   },
@@ -8,6 +9,22 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "sideEffects": false,
+  "license": "MIT",
+  "homepage": "https://abhaystd.github.io/react-icons-cloud/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abhaystd/react-icons-cloud.git",
+    "directory": "packages/core"
+  },
+  "keywords": [
+    "react",
+    "icons",
+    "cloud",
+    "svg",
+    "react-icons",
+    "icon-library",
+    "typescript"
+  ],
   "scripts": {
     "build": "tsup"
   },
