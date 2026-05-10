@@ -1,6 +1,7 @@
 {
   "name": "@react-icons-cloud/aws",
   "version": "0.1.0",
+  "description": "500+ AWS (Amazon Web Services) architecture and resource icons as optimized, tree-shakeable React components with full TypeScript support.",
   "publishConfig": {
     "access": "public"
   },
@@ -8,6 +9,29 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "sideEffects": false,
+  "license": "MIT",
+  "homepage": "https://abhaystd.github.io/react-icons-cloud/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abhaystd/react-icons-cloud.git",
+    "directory": "packages/aws"
+  },
+  "keywords": [
+    "react",
+    "icons",
+    "aws",
+    "amazon",
+    "cloud",
+    "svg",
+    "react-icons",
+    "aws-icons",
+    "aws-architecture",
+    "icon-library",
+    "typescript",
+    "s3",
+    "lambda",
+    "ec2"
+  ],
   "dependencies": {
     "@react-icons-cloud/core": "*"
   },
