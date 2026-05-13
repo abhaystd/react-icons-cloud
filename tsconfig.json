@@ -5,6 +5,7 @@
         "esModuleInterop": true,
         "skipLibCheck": true,
         "baseUrl": ".",
+        "jsx": "react-jsx",
         "paths": {
             "@react-icons-cloud/*": [
                 "packages/*/src/index.ts"

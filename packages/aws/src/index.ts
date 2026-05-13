@@ -1,5 +1,3 @@
-export { SampleIcon } from "./icons/SampleIcon";
-export { AwsLambda } from "./icons/AwsLambda";
 export { ResUser48Light } from "./icons/ResUser48Light";
 export { ResUser48Dark } from "./icons/ResUser48Dark";
 export { ResUsers48Light } from "./icons/ResUsers48Light";
