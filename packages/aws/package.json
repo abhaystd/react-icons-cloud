@@ -1,6 +1,6 @@
 {
   "name": "@react-icons-cloud/aws",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "500+ AWS (Amazon Web Services) architecture and resource icons as optimized, tree-shakeable React components with full TypeScript support.",
   "publishConfig": {
     "access": "public"

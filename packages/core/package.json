@@ -1,6 +1,6 @@
 {
   "name": "@react-icons-cloud/core",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Core utility and base components for the react-icons-cloud icon library. Provides the underlying SVG wrapper and TypeScript types.",
   "publishConfig": {
     "access": "public"
