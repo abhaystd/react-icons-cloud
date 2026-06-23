@@ -10,7 +10,8 @@
 
 ## Overview
 
-**React Icons Cloud** brings professional, production-ready cloud infrastructure icons to your React and TypeScript applications. Each icon is an individually importable component — so only the icons you use are included in your final bundle.
+**React Icons Cloud** brings professional, production-ready cloud infrastructure icons to your React and TypeScript applications. Each icon is an individually importable component - so only the icons you use are included in your final bundle.
+⭐ If you find this project useful, please consider giving it a star on GitHub - it helps support the project and makes it easier for others to discover it.
 
 ## Packages
 
